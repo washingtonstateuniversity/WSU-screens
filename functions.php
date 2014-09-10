@@ -5,11 +5,6 @@ add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'quote', 
 add_action( 'wp_enqueue_scripts', 'screens_wp_enqueue_scripts' );
 	
 function screens_wp_enqueue_scripts() {
-    wp_dequeue_style( 'wsu-spine' );
-	wp_enqueue_style( 'wsu-spine', '//spine.dev/build/spine.min.css', array(), spine_get_script_version() );
-	wp_dequeue_script( 'wsu-spine' );
-	wp_enqueue_script( 'wsu-spine', '//spine.dev/build/spine.min.js', array( 'wsu-jquery-ui-full' ), spine_get_script_version() );
-	
 	//  Screens Styles
 	wp_enqueue_style( 'sspika', get_stylesheet_directory_uri() . '/repo/pika/webfonts/ss-pika.css', array(), spine_get_script_version() );
 	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/scripts/video/video-js.css', array(), spine_get_script_version() );
