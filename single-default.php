@@ -55,4 +55,6 @@ if ( spine_has_background_image() ) {
 
 </main><!--/#page-->
 
-<?php get_footer(); ?>
+<?php
+
+get_footer();
