@@ -1,10 +1,11 @@
-<?php get_header(); ?>
+<?php
 
-<?php if (has_tag('featured')) {
-		get_template_part( 'single', 'featured' );
-	} else {
-		get_template_part( 'single', 'default' );
-	}
-?>
+get_header();
 
-<?php get_footer(); ?>
+if (has_tag('featured')) {
+	get_template_part( 'single', 'featured' );
+} else {
+	get_template_part( 'single', 'default' );
+}
+
+get_footer();

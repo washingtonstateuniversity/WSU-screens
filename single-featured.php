@@ -4,7 +4,7 @@
 	$videolink = get_post_meta($post->ID, 'video', TRUE);
 	?>
 
-<main class="featured<?php echo " ".$menucolor; ?>">
+<main class="featured<?php echo " ". esc_attr( $menucolor ); ?>">
 
 <button id="reload"></button>
 
@@ -36,7 +36,7 @@
 
 				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				foreach( $recent_posts as $recent ){
-						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+						echo '<li><a href="' . esc_url( get_permalink($recent["ID"] ) ) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
 						}
 			?>
 			</ul>
