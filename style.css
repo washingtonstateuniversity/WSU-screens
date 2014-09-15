@@ -1,0 +1,240 @@
+/*
+Theme Name: WSU Screens
+Theme URI: http://screens.wsu.edu
+Author: WSU University Communications
+Author URI: http://web.wsu.edu
+Description: Theme for multimedia display on display screens, including touch screens
+Version: 0.0.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: spine
+
+*/
+
+
+main,
+main.featured {
+	width: 1920px;
+	xxheight: 1080px;
+	margin: 0px;
+	float: none;
+	z-index: 0;
+	position: relative;
+	}
+#binder {
+	width: 100% !important;
+	}
+#spine {
+	display: none !important;
+	}
+
+@media screen
+	and ( device-width : 1920px )
+	and ( device-width : 1080px )
+	
+	{
+
+	main,
+	main video,
+	main * {
+		cursor: none;
+		}
+	
+	}
+	
+xmain.home header,
+xmain.featured header {
+	position: absolute;
+	z-index: 100;
+	}
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* CONTROLS */
+nav {
+	position: absolute;
+	top: 910px;
+	left: 10px;
+	width: 160px;
+	height: 160px;
+	overflow: visible;
+	}
+	
+nav > button,
+nav > a.button {
+	border: none;
+	border-radius: 10px;
+	background: #981e32;
+	color: white;
+	display: block;
+	vertical-align: middle;
+	margin: 0px 5px 5px 0px;
+	box-shadow: 0px 0px 5px rgba(48,48,48,0.77);
+	height: 50px;
+	width: 50px;
+	float: right;
+	box-sizing: border-box;
+	}
+nav > button:focus,
+nav > button:active {
+	-webkit-focus-ring: none !important;
+	-webkit-focus-ring-color: transparent !important;
+	-webkit-appearance: normal !important;
+	outline: none;
+	}
+nav button:hover,
+nav a.button:hover {
+	background: #c60c30;
+	border: none;
+	text-shadow: none;
+	}
+button#menu {
+	width: 100px;
+	height: 105px;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	padding: 0px;
+	}
+button#menu.closed,
+button#menu.closed:hover {
+	background: #981e32 url('repo/images/icons/touch.png') left bottom no-repeat;
+	xbackground: #981e32 url('repo/images/icons/down.png') left bottom no-repeat;
+	}
+button#menu.opened,
+button#menu.opened:hover {
+	background: #981e32 url('repo/images/icons/down.png') left bottom no-repeat;
+	border-radius: 0px 0px 10px 10px;
+	}
+	
+
+#mute {
+	position: absolute;
+	left: 105px;
+	bottom: 0px;
+	}
+#pauseplay {
+	position: absolute;
+	left: 105px;
+	bottom: 55px;
+	}
+
+/* MENU */
+button#reload {
+	background: transparent;
+	border: none;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+	}
+.postid-49 button#reload {
+	top: auto;
+	bottom: 0;
+	}
+button#menu menu {
+	position: absolute;
+	bottom: 0px;
+	display: block;
+	background: #981e32;
+	padding: 0px;
+	margin: 0px;
+	}
+button#menu menu ul#featured {
+	position: absolute;
+	bottom: 0px;
+	margin-bottom: 107px;
+	}
+button#menu.opened menu {
+	box-sizing: border-box;
+	}
+button#menu menu ul li {
+	margin: 0px;
+	padding: 0px;
+	}
+.home button#menu.closed:after,
+.home button#menu.closed:hover:after {
+	color: white;
+	content: "Start";
+	font-size: 48px;
+	left: 105px;
+	bottom: 15px;
+	xtext-shadow: 0px 0px 5px black;
+	position: absolute;
+	}
+.home button#menu {
+	width: 250px;
+	}
+button#menu menu ul li a {
+	color: white;
+	text-shadow: 0px 0px 5px #6b1523;
+	display: block;
+	font-size: 36px;
+	line-height: 30px;
+	padding: 15px 20px;
+	xborder-bottom: 3px #6b1523 solid;
+	text-align: left;
+	white-space: nowrap;
+	background: #c60c30; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c60c30', endColorstr='#981e32'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#c60c30), to(#981e32)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #c60c30,  #981e32); /* for firefox 3.6+ */
+	}
+button#menu menu ul li a:hover {
+	background: #6b1523;
+	}
+	
+.gray-darkest button#menu,
+.gray-darkest button#menu:hover,
+.gray-darkest button#menu.opened,
+.gray-darkest button#menu.opened:hover {
+	background-color: #262a2d;
+	}
+
+.gray-darkest button#menu menu ul li a {
+	background: #262a2d; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#384044', endColorstr='#262a2d'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#384044), to(#262a2d)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #384044,  #262a2d); /* for firefox 3.6+ */
+	}
+.gray-darkest button#menu menu ul li a:hover {
+	background: black;
+	}
+	
+/* FORMATS */
+main.featured article {
+	box-sizing: border-box;
+	min-height: 1080px;
+	max-height: 1080px;
+	}
+article.format-video {
+	background: #30393a;
+	}
+article.format-quote {
+	background: white url('repo/images/letters/wsu-one-o35.png') left top no-repeat;
+	xbackground-size: auto 800px;
+	}
+article.format-quote blockquote {
+	padding: 200px 450px 250px 250px;
+	font-size: 4em;
+	line-height: 1.5em;
+	}
+article.format-quote blockquote:first-letter {
+	float: left;
+	font-size: 5.3em;
+	line-height: 1em;
+	font-family: "Palatino", serif;
+	margin-left: -50px;
+	margin-right: 10px;
+	margin-bottom: -80px;
+	}
+figure p {
+	padding: 0px;
+	margin: 0px;
+	}
+	
+
