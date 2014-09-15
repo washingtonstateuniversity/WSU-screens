@@ -1,6 +1,6 @@
 <?php
 
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'quote', 'link', 'image','award' ) );
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'quote', 'link', 'image' ) );
 
 add_action( 'wp_enqueue_scripts', 'screens_wp_enqueue_scripts' );
 	
@@ -11,11 +11,11 @@ function screens_wp_enqueue_scripts() {
 	wp_enqueue_script( 'wsu-spine', '//spine.dev/build/spine.min.js', array( 'wsu-jquery-ui-full' ), spine_get_script_version() );
 	
 	//  Screens Styles
-	wp_enqueue_style( 'sspika', get_stylesheet_directory_uri() . '/repo/pika/webfonts/ss-pika.css', array(), spine_get_script_version() );
-	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/scripts/video/video-js.css', array(), spine_get_script_version() );
+	wp_enqueue_style( 'sspika', get_stylesheet_directory_uri() . '/media/icons/ss-pika.css', array(), spine_get_script_version() );
+	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/scripts/videojs/video-js.css', array(), spine_get_script_version() );
 	
 	// Screens Scripts
-	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/scripts/video/video.js' );
+	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/scripts/videojs/video.js' );
 	wp_enqueue_script( 'wsu-screens', get_stylesheet_directory_uri() .'/scripts/scripts.js', array(), spine_get_script_version() );
 	}
 	
@@ -38,6 +38,53 @@ function spine_register_menu_locations() {
   register_nav_menu('side-bottom',__( 'Side (Bottom)' ));
 }
 add_action( 'init', 'spine_register_menu_locations' );
+
+function screens_customize_register( $wp_customize ){
+
+	// Style Options
+	$wp_customize->add_section('section_screens', array(
+		'title'    => __('Screens Options', 'spine'),
+		'priority' => 100,
+		'description' => '',
+	));
+
+	$wp_customize->add_setting('screens_options[aspect_ratio]', array(
+		'default'        => 'unspecified',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'option',
+	));
+
+	$wp_customize->add_control('screens_aspect_ratio', array(
+		'settings'   => 'screens_options[aspect_ratio]',
+		'label'      => __('Aspect Ratio', 'spine'),
+		'section'    => 'section_screens',
+		'type'       => 'select',
+		'choices'    => array(
+			'unspecified' => 'Unspecified',
+			'16-9' => '16-9 (1080p, 720p)',
+			'4-3' => '4-3'
+		),
+	));
+	
+	$wp_customize->add_setting('screens_options[orientation]', array(
+		'default'        => 'landscape',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'option',
+	));
+
+	$wp_customize->add_control('screens_orientation', array(
+		'settings'   => 'screens_options[orientation]',
+		'label'      => __('Orientation', 'screens'),
+		'section'    => 'section_screens',
+		'type'       => 'select',
+		'choices'    => array(
+			'landscape' => 'Landscape',
+			'portrait' => 'Portrait'
+		),
+	));
+	
+}
+add_action('customize_register', 'screens_customize_register');
 
 // Add award content type
 /* function create_award_post_type() {
