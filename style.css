@@ -14,17 +14,16 @@ Template: spine
 
 main,
 main.featured {
-	width: 1920px;
-	xxheight: 1080px;
+	width: 100%;
 	margin: 0px;
 	float: none;
 	z-index: 0;
 	position: relative;
 	}
-#binder {
+xx#binder {
 	width: 100% !important;
 	}
-#spine {
+xx#spine {
 	display: none !important;
 	}
 
@@ -41,12 +40,7 @@ main.featured {
 		}
 	
 	}
-	
-xmain.home header,
-xmain.featured header {
-	position: absolute;
-	z-index: 100;
-	}
+
 ::-webkit-scrollbar {
     display: none;
 }
