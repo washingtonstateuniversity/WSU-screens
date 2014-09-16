@@ -1,21 +1,18 @@
 <?php
 
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'quote', 'link', 'image' ) );
+add_post_type_support( 'page', 'post-formats' );
 
 add_action( 'wp_enqueue_scripts', 'screens_wp_enqueue_scripts' );
 	
 function screens_wp_enqueue_scripts() {
-    wp_dequeue_style( 'wsu-spine' );
-	wp_enqueue_style( 'wsu-spine', '//spine.dev/build/spine.min.css', array(), spine_get_script_version() );
-	wp_dequeue_script( 'wsu-spine' );
-	wp_enqueue_script( 'wsu-spine', '//spine.dev/build/spine.min.js', array( 'wsu-jquery-ui-full' ), spine_get_script_version() );
 	
 	//  Screens Styles
-	wp_enqueue_style( 'sspika', get_stylesheet_directory_uri() . '/media/icons/ss-pika.css', array(), spine_get_script_version() );
-	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/scripts/videojs/video-js.css', array(), spine_get_script_version() );
+	wp_enqueue_style( 'sspika', get_stylesheet_directory_uri() . '/ui/icons/ss-pika.css', array(), spine_get_script_version() );
+	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/videojs/video-js.css', array(), spine_get_script_version() );
 	
 	// Screens Scripts
-	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/scripts/videojs/video.js' );
+	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/videojs/video.js' );
 	wp_enqueue_script( 'wsu-screens', get_stylesheet_directory_uri() .'/scripts/scripts.js', array(), spine_get_script_version() );
 	}
 	
