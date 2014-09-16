@@ -1,6 +1,7 @@
 <?php // SETUP VARIABLES
 $videolink = get_post_meta($post->ID, 'video', TRUE);
 $youtube = get_post_meta($post->ID, 'youtube', TRUE);
+$vimeo = get_post_meta($post->ID, 'vimeo', TRUE);
 $audiolevel = get_post_meta($post->ID, 'audiolevel', TRUE);
 if ( $audiolevel == "") { $audiolevel = '.3';  }
 if (has_tag('home')) { $loop = " loop"; $ytloop = "&loop=1"; } else { $loop = ""; $ytloop = ""; };
