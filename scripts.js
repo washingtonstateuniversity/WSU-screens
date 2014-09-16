@@ -1,3 +1,5 @@
+(function($){
+
 jQuery(document).ready( function(){
 
 	// jQuery("input").prop("placeholder","Search").addClass("placed");
@@ -20,7 +22,20 @@ jQuery(document).ready( function(){
 		
 		});
 	
+	
+	
+
+	jQuery('input').on('focus',function(){
+		$(this).onScreenKeyboard();
+		alert("hello");
 	});
+	
+
+
+    
+   
+
+});
 
 jQuery(document).on('ready mouseup touchend', function(){
 	
@@ -99,3 +114,12 @@ jQuery(document).on('ready mouseup touchend', function(){
 	};
 	
 });
+
+
+})(jQuery);
+
+
+
+
+
+
