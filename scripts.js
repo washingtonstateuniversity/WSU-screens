@@ -1,39 +1,56 @@
 (function($){
 
-jQuery(document).ready( function(){
+$(document).ready( function(){
 
 	// jQuery("input").prop("placeholder","Search").addClass("placed");
 	
-	jQuery("tbody tr").on('ready mouseup touchend', function(){
+	$(".unbox tbody tr").on('ready mouseup touchend', function(){
 		
-		jQuery('.unboxed').removeClass('unboxed');
-		jQuery(this).addClass('unboxed');
+		$('.unboxed').removeClass('unboxed');
+		$(this).addClass('unboxed');
 		
-		jQuery(document).mouseup(function (e)
-			{
-			    var container = jQuery(".unboxed");
+		$(document).mouseup(function (e) {
+		
+			    var container = $(".unboxed");
 			
-			    if (!container.is(e.target) // if the target of the click isn't the container...
-			        && container.has(e.target).length === 0) // ... nor a descendant of the container
-			    {
-			        container.removeClass("unboxed");
-			    }
+			    if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || ( container.is(e.target) && container.has(e.target).length === 0 ) ) {
+						container.removeClass("unboxed");
+					}
 			});
+	
+	});
+	
+	$(".unfold tbody tr").on('ready mouseup touchend', function(){
 		
-		});
+		$('.unfolded').removeClass('unfolded');
+		$(this).addClass('unfolded');
+		
+		$(document).mouseup(function (e) {
+		
+			    var container = $(".unfolded");
+			
+			    if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || ( container.is(e.target) && container.has(e.target).length === 0 ) ) {
+						container.removeClass("unfolded");
+					}
+			});
 	
+	});
+		
 	
-	
-
-	jQuery('input').on('focus',function(){
+	$('input').on('focus',function(){
 		$(this).onScreenKeyboard();
 		alert("hello");
 	});
 	
+	$(".menu li").on('mouseup touchend', function() {
+		
+		$(this).siblings('li').removeClass('opened');
+		$(this).toggleClass('opened');
+		
+		});
 
-
-    
-   
+	$("div:not(#spine) .menu li.current").addClass('dogeared').parents('li').addClass('parent').addClass('active');
+		
 
 });
 
