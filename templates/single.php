@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 
-<main class="spine-single-template">
+<main class="screens-single-template">
 
 <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
