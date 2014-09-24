@@ -7,8 +7,8 @@ add_action( 'wp_enqueue_scripts', 'screens_wp_enqueue_scripts' );
 	
 function screens_wp_enqueue_scripts() {
 	
-	// Pika Symbolfont
-	wp_enqueue_style( 'sspika', get_stylesheet_directory_uri() . '/ui/icons/ss-pika.css', array(), spine_get_script_version() );
+	// Symbolfont
+	wp_enqueue_style( 'fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css' );
 	
 	// Video JS
 	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/video/video.dev.js' );
@@ -85,42 +85,22 @@ function screens_customize_register( $wp_customize ){
 			'portrait' => 'Portrait'
 		),
 	));
+
+	$wp_customize->add_setting('screens_options[returnhome]', array(
+		'default'        => '0',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'option',
+	));
+
+	$wp_customize->add_control('screens_returnhome', array(
+		'settings'   => 'screens_options[returnhome]',
+		'label'      => __('Return Home', 'screens'),
+		'description'    => 'Returns to home page when idle for specified number of seconds... (0 for no return)',
+		'section'    => 'section_screens',
+		'type'       => 'text',
+	));
 	
 }
 add_action('customize_register', 'screens_customize_register');
-
-// Add award content type
-/* function create_award_post_type() {
-    $labels = array(
-        'name'           => __('Coffee Reviews'),
-        'singular_name'  => __('Coffee Review'),
-    );
-    $args = array(
-        'labels'         => $labels,
-        'public'         => true,
-        'has_archive'    => true,
-        'menu_position'  => 5,
-        'description'    => 'Reviews And Types of Coffee',
-        'rewrite'        =>
-            array('slug' => 'reviews'),
-        'supports'       =>
-            array( 'title',
-                'comments', 'editor',
-                'thumbnail', 'custom-fields', 'revisions'),
-    );
- 
-    register_post_type('Reviews', $args);
-}
-add_action('init', 'create_new_post_type'); */
-
-/*
-		
-<script type="text/javascript">
-	var _gaq = _gaq || [];	_gaq.push(['_setAccount', 'UA-4341226-13']);
-	_gaq.push(['_trackPageview']);	(function() {var ga = document.createElement('script');
-	ga.type = 'text/javascript';
-	ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
-</script>*/
 
 ?>
