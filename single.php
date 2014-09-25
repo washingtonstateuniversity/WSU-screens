@@ -1,13 +1,14 @@
 <?php get_header();
 
-<?php get_template_part('parts/headers'); ?>
-<?php get_template_part('parts/featured-images'); ?>
-	
-<?php // SETUP VARIABLES
-	$format = get_post_format();
-	$menucolor = get_post_meta($post->ID, 'menucolor', TRUE);
-	$videolink = get_post_meta($post->ID, 'video', TRUE);
-	?>
+get_template_part( 'parts/headers' );
+get_template_part( 'parts/featured-images' );
+
+// SETUP VARIABLES
+$format = get_post_format();
+$menucolor = get_post_meta( $post->ID, 'menucolor', TRUE );
+$videolink = get_post_meta( $post->ID, 'video', TRUE );
+
+?>
 
 <main class="featured<?php echo " ".$menucolor; ?>">
 
