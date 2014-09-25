@@ -10,7 +10,7 @@ $videolink = get_post_meta( $post->ID, 'video', TRUE );
 
 ?>
 
-<main class="featured<?php echo " ".$menucolor; ?>">
+<main class="featured<?php echo ' ' . esc_attr( $menucolor ); ?>">
 
 <button id="reload"></button>
 
