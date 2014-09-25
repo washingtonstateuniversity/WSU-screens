@@ -103,4 +103,11 @@ function screens_customize_register( $wp_customize ){
 }
 add_action('customize_register', 'screens_customize_register');
 
+function wall_posted_on() {
+	return '';
+}
+
+function wall_categorized_blog() {
+	return false;
+}
 ?>
