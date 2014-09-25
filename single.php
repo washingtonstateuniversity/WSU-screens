@@ -33,8 +33,8 @@ $videolink = get_post_meta( $post->ID, 'video', TRUE );
 
 			$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 			foreach( $recent_posts as $recent ){
-					echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-					}
+					echo '<li><a href="' . esc_url( get_permalink( $recent['ID'] ) ) . '" title="' . esc_attr( $recent['post_title'] ) . '" >' . $recent['post_title'] . '</a> </li> ';
+			}
 		?>
 		</ul>
 		</menu>
@@ -45,7 +45,7 @@ $videolink = get_post_meta( $post->ID, 'video', TRUE );
 
 <?php if ( spine_has_featured_image() ) : ?> 
 <?php $featured_image_src = spine_get_featured_image_src(); ?>
-<figure class="featured-image" style="background-image: url('<?php echo $featured_image_src ?>');">
+<figure class="featured-image" style="background-image: url('<?php echo esc_url( $featured_image_src ); ?>');">
 	<?php spine_the_featured_image(); ?>
 </figure>
 <?php endif; ?>
