@@ -45,7 +45,6 @@ wp_reset_postdata();
 </nav>
 </header>
 
-
 </main>
 
 <?php get_footer(); ?>
