@@ -11,6 +11,7 @@
 	
 	} */
 	
+$(document).ready( function(){
 	
 	$(".menu li").on('mouseup touchend', function() {
 		
