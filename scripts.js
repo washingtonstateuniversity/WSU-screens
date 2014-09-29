@@ -1,46 +1,16 @@
 (function($){
 
-$(document).ready( function(){
-
-	// jQuery("input").prop("placeholder","Search").addClass("placed");
+/* function disclose(disclosure,discloser,enclosure) {
+	if ( disclosure_style == "" ) { disclosure_style = open; }
+	var disclosures_style = [ "unfold", "unbox", "unveil" ];
+	disclosures=$(".unfold", ".unbox", ".unveil");
+	if ($("unfold").length)
+		var disclosure = ".unfold";
+		$().each('disclosures',function {}
+	)
 	
-	$(".unbox tbody tr").on('ready mouseup touchend', function(){
-		
-		$('.unboxed').removeClass('unboxed');
-		$(this).addClass('unboxed');
-		
-		$(document).mouseup(function (e) {
-		
-			    var container = $(".unboxed");
-			
-			    if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || ( container.is(e.target) && container.has(e.target).length === 0 ) ) {
-						container.removeClass("unboxed");
-					}
-			});
+	} */
 	
-	});
-	
-	$(".unfold tbody tr").on('ready mouseup touchend', function(){
-		
-		$('.unfolded').removeClass('unfolded');
-		$(this).addClass('unfolded');
-		
-		$(document).mouseup(function (e) {
-		
-			    var container = $(".unfolded");
-			
-			    if ( ( !container.is(e.target) && container.has(e.target).length === 0 ) || ( container.is(e.target) && container.has(e.target).length === 0 ) ) {
-						container.removeClass("unfolded");
-					}
-			});
-	
-	});
-		
-	
-	$('input').on('focus',function(){
-		$(this).onScreenKeyboard();
-		alert("hello");
-	});
 	
 	$(".menu li").on('mouseup touchend', function() {
 		
