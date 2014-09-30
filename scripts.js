@@ -12,17 +12,7 @@
 	} */
 	
 $(document).ready( function(){
-	
-	$(".menu li").on('mouseup touchend', function() {
-		
-		$(this).siblings('li').removeClass('opened');
-		$(this).toggleClass('opened');
-		
-		});
-
-	$("div:not(#spine) .menu li.current").addClass('dogeared').parents('li').addClass('parent').addClass('active');
-		
-
+	// Placeholder
 });
 
 jQuery(document).on('ready mouseup touchend', function(){
