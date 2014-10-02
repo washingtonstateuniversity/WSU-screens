@@ -3,6 +3,23 @@
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'quote', 'link', 'image' ) );
 add_post_type_support( 'page', 'post-formats' );
 
+function screens_get_option( $option_name ) {
+	$screens_options = get_option( 'screens_options' );
+
+	// Defaults for the screens options will be compared to what is stored in screens_options.
+	$defaults = array(
+		'returnhome'             => '0',
+	);
+	
+	$screens_options = wp_parse_args( $screens_options, $defaults );
+	
+	if ( isset( $screens_options[ $option_name ] ) ) {
+		return $screens_options[ $option_name ];
+	} else {
+		return false;
+	}
+}
+
 add_action( 'wp_enqueue_scripts', 'screens_wp_enqueue_scripts' );
 	
 function screens_wp_enqueue_scripts() {
@@ -11,15 +28,20 @@ function screens_wp_enqueue_scripts() {
 	wp_enqueue_style( 'fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css' );
 	
 	// Video JS
-	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/video/video.dev.js' );
-	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/video/video-js.css' );
+	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/video/video.dev.js', array('wsu-spine') );
+	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/video/video-js.css', array('wsu-spine') );
 	
 	// On Screen Keyboard
-	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/keyboard/jquery.onScreenKeyboard.min.js' );
-	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/keyboard/onScreenKeyboard.css' );
+	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/keyboard/jquery.onScreenKeyboard.min.js', array('wsu-spine') );
+	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/keyboard/onScreenKeyboard.css', array('wsu-spine') );
+	
+	// Idle Timer
+	if ( screens_get_option('returnhome') != "0" ) {
+		wp_enqueue_script( 'idletimer', get_stylesheet_directory_uri() . '/ui/idle/idle-timer.1.0.1.min.js', array('jquery') );
+	}
 	
 	// Screens Scripts
-	wp_enqueue_script( 'wsu-screens', get_stylesheet_directory_uri() .'/scripts.js', array(), spine_get_script_version() );
+	wp_enqueue_script( 'wsu-screens-scripts', get_stylesheet_directory_uri() .'/scripts.js', array('wsu-spine'), spine_get_script_version() );
 }
 	
 add_action('wp_head', 'header_meta');
