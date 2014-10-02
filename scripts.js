@@ -13,7 +13,18 @@
 	
 $(document).ready( function(){
 	
-	// placeholder
+	function is_touch_device() {
+	return (('ontouchstart' in window)
+	      || (navigator.MaxTouchPoints > 0)
+	      || (navigator.msMaxTouchPoints > 0));
+	}
+ 
+	if (is_touch_device()) {
+	 
+		$('body').addClass('is-touch-device');
+		$(document)[0].oncontextmenu = function() {return false;} 
+	 
+	}
 	
 });
 
