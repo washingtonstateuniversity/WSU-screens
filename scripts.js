@@ -12,7 +12,9 @@
 	} */
 	
 $(document).ready( function(){
-	// Placeholder
+	
+	// placeholder
+	
 });
 
 jQuery(document).on('ready mouseup touchend', function(){
