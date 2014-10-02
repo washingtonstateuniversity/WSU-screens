@@ -32,8 +32,10 @@ function screens_wp_enqueue_scripts() {
 	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/video/video-js.css', array('wsu-spine') );
 	
 	// On Screen Keyboard
-	wp_enqueue_script( 'videojs', get_stylesheet_directory_uri() . '/ui/keyboard/jquery.onScreenKeyboard.min.js', array('wsu-spine') );
-	wp_enqueue_style( 'videojs', get_stylesheet_directory_uri() . '/ui/keyboard/onScreenKeyboard.css', array('wsu-spine') );
+	wp_enqueue_script( 'keyboard-js', get_stylesheet_directory_uri() . '/ui/keyboard/jquery.onScreenKeyboard.js', array('jquery') );
+	wp_enqueue_style( 'keyboard-css', get_stylesheet_directory_uri() . '/ui/keyboard/onScreenKeyboard.css' );
+	// wp_enqueue_script( 'keyboard-js', get_stylesheet_directory_uri() . '/ui/keyboard/js/jquery.keyboard.js', array('jquery') );
+	// wp_enqueue_style( 'keyboard-css', get_stylesheet_directory_uri() . '/ui/keyboard/css/keyboard.css', array('jquery') );
 	
 	// Idle Timer
 	if ( screens_get_option('returnhome') != "0" ) {
