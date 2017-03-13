@@ -38,12 +38,17 @@ function screens_wp_enqueue_scripts() {
 	// wp_enqueue_style( 'keyboard-css', get_stylesheet_directory_uri() . '/ui/keyboard/css/keyboard.css', array('jquery') );
 	
 	// Idle Timer
-	if ( screens_get_option('returnhome') != "0" ) {
+	if ( screens_get_option('returnhome') != "0" && ! is_page_template( 'templates/alumni-association.php' ) ) {
 		wp_enqueue_script( 'idletimer', get_stylesheet_directory_uri() . '/ui/idle/idle-timer.1.0.1.min.js', array('jquery') );
 	}
 	
 	// Screens Scripts
 	wp_enqueue_script( 'wsu-screens-scripts', get_stylesheet_directory_uri() .'/scripts.js', array('wsu-spine'), spine_get_script_version() );
+
+	// Alumni Association template styles
+	if ( is_page_template( 'templates/alumni-association.php' ) ) {
+		wp_enqueue_style( 'alumni-association', get_stylesheet_directory_uri() . '/alumni-association.css', array('wsu-spine') );
+	}
 }
 	
 add_action('wp_head', 'header_meta');
