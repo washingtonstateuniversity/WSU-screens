@@ -212,6 +212,13 @@ footer div {
 	}
 }
 
+@media screen and (max-width: 989px) {
+
+	#binder main {
+		margin-top: 0;
+	}
+}
+
 @media only screen and (max-width: 1259px) {
 	.main-header hgroup {
 		max-width: 768px;
