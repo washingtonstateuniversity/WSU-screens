@@ -1,0 +1,227 @@
+.page-template-alumni-association #binder.fluid.max-1980,
+.page-template-alumni-association #binder.fluid.max-1980 .row {
+	max-width: none;
+}
+
+.page-template-alumni-association main {
+	padding-bottom: 0;
+}
+
+.main-header {
+	background: url(images/alumni-header-bg.png) center;
+	height: auto;
+}
+
+.main-header hgroup {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 1260px;
+	padding: 10px 15px 12px;
+	width: 100%;
+}
+
+.main-header hgroup h1 {
+	padding: 0 15px;
+}
+
+.image-replace {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.image-replace:before {
+	background-size: cover;
+	content: "";
+	display: block;
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.header-logo {
+	height: 57px;
+	width: 164px;
+}
+
+.header-logo:before {
+	background-image: url(images/alumni-header-logo-white.png);
+}
+
+.main-header hgroup h2 {
+	height: 22px;
+	margin: 0 15px;
+	padding: 0;
+	width: 410px;
+}
+
+.main-header hgroup h2:before {
+	background-image: url(images/make-a-difference-white.png);
+}
+
+.page-template-alumni-association .column.one {
+	background: #fff;
+	float: none;
+	margin: 0 auto;
+	max-width: 1230px;
+	padding: 25px;
+}
+
+.awardees-filters {
+	flex-wrap: wrap;
+}
+
+footer {
+	background: #5e6a71;
+	color: #fff;
+}
+
+footer a {
+	color: #fff;
+}
+
+footer a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+footer section {
+	font-size: 12px;
+	padding: 55px 20px;
+	text-align: center;
+}
+
+.footer-logo {
+	height: 81px;
+	width: 165px;
+}
+
+.footer-logo:before {
+	background-image: url(images/alumni-footer-logo.png);
+}
+
+footer div {
+	font-size: 10px;
+}
+
+.page-template-alumni-association .has-inscription:not(.show-inscription):hover header,
+.page-template-alumni-association .unbox .has-inscription:not(.show-inscription):hover header {
+	color: #717171;
+}
+
+.page-template-alumni-association .has-inscription:not(.show-inscription):hover h3 {
+	text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.row.single {
+		background: url(images/alumni-tablet-bg.jpg) center top #000 no-repeat;
+		padding: 40px;
+	}
+
+	footer div br {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1260px) {
+
+	.row.single {
+		background: url(images/alumni-bg.jpg) center top #000 no-repeat;
+	}
+}
+
+@media only screen and (max-width: 693px) {
+	.page-template-alumni-association .awardee {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.page-template-alumni-association .main-header {
+		background: #fff;
+		border-top: 50px solid #981e32;
+	}
+
+	.main-header hgroup {
+		justify-content: initial;
+		padding: 0;
+	}
+
+	.main-header hgroup:before {
+		content: "";
+		flex: 1 0 100%;
+		order: -1;
+	}
+
+	.header-logo {
+		height: 56.55px;
+		width: 160px;
+	}
+
+	.header-logo:before {
+		background-image: url(images/alumni-header-logo-red.png);
+	}
+
+	.main-header hgroup h2 {
+		height: 19px;
+		margin: 12px auto 21px;
+		order: -2;
+		width: 364px;
+	}
+
+	.main-header hgroup h2:before {
+		background-image: url(images/make-a-difference-red.png);
+	}
+
+	footer {
+		background: #981e32;
+	}
+
+	footer section {
+		font-size: 14px;
+	}
+
+	footer div {
+		font-size: 12px;
+	}
+
+	footer div span {
+		display: none;
+	}
+
+	.page-template-alumni-association .awardee header h3 {
+		font-size: 1.5rem;
+	}
+
+	.page-template-alumni-association .awardee.has-inscription:before {
+		margin-top: 3px;
+	}
+}
+
+@media screen and (max-width: 791px) {
+
+	#binder.fluid main,
+	#binder.hybrid main {
+		margin-top: 0;
+	}
+}
+
+@media screen and (max-width: 989px) {
+
+	#binder main {
+		margin-top: 0;
+	}
+}
+
+@media only screen and (max-width: 1259px) {
+	.main-header hgroup {
+		max-width: 768px;
+		margin: 0 auto;
+	}
+}
